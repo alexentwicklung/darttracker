@@ -3,7 +3,7 @@ const urlsToCache = [
   '/darttracker/',
   '/darttracker/index.html',
   '/darttracker/manifest.json',
-  '/darttracker/dartlogo.png',  // Stelle sicher, dass diese Datei im Repo ist und der Name exakt stimmt (Groß-/Kleinschreibung!)
+  '/darttracker/dartLogo.png',  // Stelle sicher, dass diese Datei im Repo ist und der Name exakt stimmt (Groß-/Kleinschreibung!)
 ];
 
 self.addEventListener('install', event => {
