@@ -1,12 +1,12 @@
-// sw.js - Service Worker für Offline-Funktionalität
+// sw.js - Korrigierter Service Worker für GitHub Pages Repo
 
 const CACHE_NAME = 'dart-tracker-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/logo.png',  // Passe den Pfad zu deinem Icon an
-  // Füge weitere Dateien hinzu, z.B. CSS oder JS, falls du externe hast
+  '/darttracker/',  // Root des Repos
+  '/darttracker/index.html',
+  '/darttracker/manifest.json',
+  '/darttracker/dartlogo.png',  // Passe den Icon-Namen an
+  // Füge weitere Dateien hinzu, falls du externe hast
 ];
 
 // Installations-Event: Cache die Ressourcen
