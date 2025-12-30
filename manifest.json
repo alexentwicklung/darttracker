@@ -1,15 +1,21 @@
 {
-    "name": "Dart Tracker",
-    "short_name": "DartTracker",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#f0f0f0",
-    "theme_color": "#ffffff",
-    "icons": [
-        {
-            "src": "dartLogo.jpg",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ]
+  "name": "Dart Tracker",
+  "short_name": "DartTracker",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "dartlogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "dartlogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
