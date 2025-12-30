@@ -3,7 +3,7 @@ const urlsToCache = [
   '/darttracker/',
   '/darttracker/index.html',
   '/darttracker/manifest.json',
-  '/darttracker/dartlogo.png',  // Prüfe, ob diese Datei existiert und der Name stimmt
+  '/darttracker/dartlogo.png',  // Stelle sicher, dass diese Datei im Repo ist und der Name exakt stimmt (Groß-/Kleinschreibung!)
 ];
 
 self.addEventListener('install', event => {
@@ -14,10 +14,10 @@ self.addEventListener('install', event => {
         console.log('SW: Cache opened, adding URLs:', urlsToCache);
         return cache.addAll(urlsToCache);
       })
-      .then(() => console.log('SW: All resources cached'))
+      .then(() => console.log('SW: All resources cached successfully'))
       .catch(error => {
         console.error('SW: Cache error during install:', error);
-        throw error;  // Wirf den Fehler, um Installation zu stoppen
+        throw error;  // Stoppt die Installation bei Fehler
       })
   );
 });
