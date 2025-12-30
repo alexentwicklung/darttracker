@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dart Tracker</title>
+    <link rel="manifest" href="manifest.json"> <!-- Für PWA -->
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f0f0f0; }
+        #score { font-size: 48px; margin: 20px; }
+        input { width: 100px; padding: 10px; font-size: 18px; }
+        button { padding: 10px 20px; margin: 10px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Dart Tracker (501)</h1>
+    <div id="score">501</div>
+    <input type="number" id="points" placeholder="Punkte eingeben" min="0" max="180">
+    <br>
+    <button onclick="subtractPoints()">Abziehen</button>
+    <button onclick="resetGame()">Neues Spiel</button>
+
+    <script>
+        let currentScore = 501;
+
+        function subtractPoints() {
+            const points = parseInt(document.getElementById('points').value);
+            if (points > 0 && points <= currentScore) {
+                currentScore -= points;
+                document.getElementById('score').textContent = currentScore;
+                document.getElementById('points').value = '';
+                if (currentScore === 0) {
+                    alert('Gewonnen!');
+                }
+            } else {
+                alert('Ungültige Eingabe!');
+            }
+        }
+
+        function resetGame() {
+            currentScore = 501;
+            document.getElementById('score').textContent = currentScore;
+            document.getElementById('points').value = '';
+        }
+    </script>
+<!-- Füge dies am Ende von index.html hinzu, vor </body> -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registriert:', registration);
+        })
+        .catch(error => {
+          console.log('Service Worker Fehler:', error);
+        });
+    });
+  }
+</script>
+</body>
+</html>
